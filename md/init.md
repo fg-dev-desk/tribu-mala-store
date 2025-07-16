@@ -17,12 +17,12 @@ Una tienda de streetwear llamada **Tribu Mala Store** con:
 - Panel de usuario para ver historial de compras
 
 ### **Estado actual:**
-- ✅ **Stripe funcionando** (checkout, verify-session, webhooks básicos)
+- ✅ **Stripe funcionando** (checkout, verify-session, webhooks robustos)
 - ✅ **Frontend base** (Next.js + Tailwind + shadcn/ui)
 - ✅ **Carrito funcional** con Context API
 - ✅ **Variables de entorno** configuradas
-- ❌ **Base de datos** - AÚN NO implementada
-- ❌ **Autenticación** - AÚN NO implementada
+- ✅ **Base de datos** - Neon PostgreSQL + Prisma funcionando
+- ✅ **Autenticación** - NextAuth.js completo con registro/login
 
 ---
 
@@ -103,13 +103,14 @@ pnpm run lint
 ## 💬 **CONTEXTO DE CONVERSACIONES**
 
 ### **Última sesión trabajamos en:**
-- ✅ Configuración de variables de entorno
-- ✅ Actualización de keys de Stripe
-- ✅ Creación de documentación MVP
-- ✅ Reestructuración de prioridades
+- ✅ Setup completo de Neon PostgreSQL + Prisma
+- ✅ Implementación de NextAuth.js con credenciales
+- ✅ Páginas de registro y login funcionales
+- ✅ Webhook handler robusto con persistencia en DB
+- ✅ Sistema de emails preparado para confirmaciones
 
 ### **Próximo paso acordado:**
-**Implementar webhook handler robusto y setup de base de datos Neon**
+**Implementar navegación con login/logout y dashboard de usuario**
 
 ---
 

@@ -26,12 +26,14 @@ Crear una tienda funcional donde se pueda **vender productos, manejar pagos exit
 - [x] **Create-checkout con persistencia** - Órdenes PENDING funcionando
 
 ### **3. 🔐 AUTENTICACIÓN & PERFILES** ⭐⭐⭐⭐⭐
-**Estado: 0% completado**
-- [ ] **NextAuth.js setup**
-- [ ] **Login/Register flows**
-- [ ] **Perfil de usuario editable**
-- [ ] **Historial de pedidos**
-- [ ] **Estados de órdenes**
+**Estado: 80% completado**
+- [x] **NextAuth.js setup** - Configurado con Prisma y JWT
+- [x] **Login/Register flows** - Páginas completas con validación
+- [x] **Sistema de contraseñas** - Hash bcrypt + verificación
+- [x] **Manejo de sesiones** - Callbacks y tipos TypeScript
+- [ ] **Perfil de usuario editable** - Dashboard personal
+- [ ] **Historial de pedidos** - Lista de órdenes del usuario
+- [ ] **Navegación con auth** - Login/logout en header
 
 ---
 

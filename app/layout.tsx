@@ -9,6 +9,7 @@ import { CartProvider } from "@/context/cart-context"
 import { CartIcon } from "@/components/cart-icon"
 import { CartDrawer } from "@/components/cart-drawer"
 import { Providers } from "@/components/providers/session-provider"
+import { AuthNav } from "@/components/navigation/auth-nav"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -29,17 +30,31 @@ export default function RootLayout({
         <Providers>
           <CartProvider>
             <SplashScreen />
+            
+            {/* Logo flotante centrado */}
             <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 pointer-events-none">
               <Logo />
             </div>
+            
+            {/* Auth flotante esquina superior derecha */}
+            <div className="fixed top-4 right-20 z-50">
+              <AuthNav variant="header" />
+            </div>
+            
+            {/* Cart Icon */}
             <div className="fixed top-4 right-4 z-50">
               <CartIcon />
             </div>
             <CartDrawer />
-            {children}
+            
+            {/* Main Content */}
+            <main className="min-h-screen">
+              {children}
+            </main>
+            
             <footer className="w-full py-6 px-4 bg-dark-600 text-gray-400">
               <div className="container mx-auto text-center">
-                <p>&copy; 2023 SDFM 2520. All rights reserved.</p>
+                <p>&copy; 2025 SDFM 2520. All rights reserved.</p>
               </div>
             </footer>
             <CustomCursor />

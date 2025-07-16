@@ -116,12 +116,16 @@
 
 ### **🔥 SEMANA 2: AUTENTICACIÓN & ÓRDENES**
 **Prioridad: CRÍTICA**
-- [ ] NextAuth.js setup completo
-- [ ] Login/Register flows
-- [ ] Perfiles de usuario editables
-- [ ] Persistencia de órdenes en DB
-- [ ] Estados de órdenes (pending, paid, processing, shipped)
-- [ ] Historial de pedidos
+- [x] ✅ **NextAuth.js setup completo** - Configurado con Prisma adapter
+- [x] ✅ **Login/Register flows** - Páginas funcionales con validación
+- [x] ✅ **Sistema de contraseñas** - Hash bcrypt implementado
+- [x] ✅ **Manejo de sesiones** - JWT y callbacks configurados
+- [ ] 🎯 **FASE 1: Componentes base auth** - AuthStatus, LoginButton, LogoutButton, UserAvatar
+- [ ] 🎯 **FASE 2: Sistema de navegación** - AuthNav, NavMenu, MobileNav
+- [ ] 🎯 **FASE 3: Integración layout** - Header responsivo con auth
+- [ ] 🎯 **FASE 4: Estados y UX** - Loading, notificaciones, redirecciones
+- [ ] 🎯 **Perfiles de usuario editables** - Dashboard personal
+- [ ] 🎯 **Integración checkout con usuarios** - Órdenes ligadas a accounts
 
 ### **🔥 SEMANA 3: CATÁLOGO & UX**
 **Prioridad: ALTA**

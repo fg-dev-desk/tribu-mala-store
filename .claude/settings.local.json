@@ -18,7 +18,11 @@
       "Bash(curl:*)",
       "Bash(git commit:*)",
       "Bash(git reset:*)",
-      "Bash(stripe version)"
+      "Bash(stripe version)",
+      "Bash(git push:*)",
+      "Bash(npx shadcn@latest add:*)",
+      "Bash(find:*)",
+      "Bash(pnpm install:*)"
     ],
     "deny": []
   }
