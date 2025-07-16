@@ -9,7 +9,7 @@
 ## 🎯 **CONTEXTO DEL PROYECTO**
 
 ### **¿Qué estamos construyendo?**
-Una tienda de streetwear (hoodies) llamada **SDFM 2520** con:
+Una tienda de streetwear llamada **Tribu Mala Store** con:
 - Pagos via Stripe 
 - Base de datos PostgreSQL (Neon)
 - Autenticación de usuarios

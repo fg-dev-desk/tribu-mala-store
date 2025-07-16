@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server"
 import type { CartItem } from "@/lib/types"
 import Stripe from "stripe"
+import { prisma } from "@/lib/prisma"
 
 // Validate that we have the required environment variables
 const stripeSecretKey = process.env.STRIPE_SECRET_KEY
@@ -38,6 +39,8 @@ function ensureHttps(url: string): string {
 
 export async function POST(request: Request) {
   try {
+    console.log("=== CREATE CHECKOUT API CALLED ===")
+    
     // Check if Stripe is properly initialized
     if (!stripe) {
       console.error("Stripe not initialized - missing API key")
@@ -63,11 +66,37 @@ export async function POST(request: Request) {
     console.log("Creating checkout session for:", customerInfo.email) // Debug log
     console.log("Items:", items.length) // Debug log
 
+    // Generate unique order number
+    const timestamp = Date.now().toString().slice(-8)
+    const random = Math.random().toString(36).substring(2, 6).toUpperCase()
+    const orderNumber = `SDM-${timestamp}-${random}`
+
+    // Calculate total amount
+    const totalAmount = items.reduce((sum, item) => sum + (item.price * item.quantity), 0)
+
+    console.log("Generated order number:", orderNumber)
+
+    // Create or find user in database
+    const user = await prisma.user.upsert({
+      where: { email: customerInfo.email },
+      update: {
+        name: customerInfo.name,
+      },
+      create: {
+        email: customerInfo.email,
+        name: customerInfo.name,
+      },
+    })
+
+    console.log("User found/created:", user.id)
+
     // Create metadata with order details for webhook processing
     const metadata = {
       customer_name: customerInfo.name,
       customer_email: customerInfo.email,
       items_count: items.length.toString(),
+      order_number: orderNumber,
+      user_id: user.id,
     }
 
     // Create a Stripe checkout session
@@ -97,7 +126,48 @@ export async function POST(request: Request) {
 
     console.log("Checkout session created:", session.id) // Debug log
 
-    return NextResponse.json({ url: session.url })
+    // Create pending order in database with correct field names
+    const order = await prisma.order.create({
+      data: {
+        orderNumber,
+        user: {
+          connect: { id: user.id }
+        },
+        status: 'PENDING',
+        paymentStatus: 'PENDING',
+        subtotal: totalAmount,
+        shippingCost: 0,
+        tax: 0,
+        total: totalAmount,
+        stripeSessionId: session.id,
+        customerName: customerInfo.name,
+        customerEmail: customerInfo.email,
+        shippingAddress: customerInfo.address,
+        shippingCity: customerInfo.city,
+        shippingZip: customerInfo.zip,
+        shippingCountry: customerInfo.country,
+        items: {
+          create: items.map(item => ({
+            productId: item.id,
+            productName: item.name,
+            productPrice: item.price,
+            quantity: item.quantity,
+            total: item.price * item.quantity,
+          }))
+        }
+      },
+      include: {
+        items: true
+      }
+    })
+
+    console.log("✅ Order created in database:", order.id, "Number:", orderNumber)
+
+    return NextResponse.json({ 
+      url: session.url,
+      orderNumber,
+      orderId: order.id 
+    })
   } catch (error: any) {
     console.error("Error creating checkout session:", error)
 
