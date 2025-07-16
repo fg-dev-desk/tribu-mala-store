@@ -1,7 +1,5 @@
 import { NextResponse } from "next/server"
 import Stripe from "stripe"
-import { prisma } from "@/lib/prisma"
-import { sendEmail, generateOrderConfirmationEmail } from "@/lib/email"
 
 const stripeSecretKey = process.env.STRIPE_SECRET_KEY
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET
@@ -45,50 +43,20 @@ export async function POST(request: Request) {
     switch (event.type) {
       case "checkout.session.completed":
         const session = event.data.object as Stripe.Checkout.Session
-        
-        console.log(`🎉 Payment successful for session: ${session.id}`)
-        console.log(`📧 Customer email: ${session.customer_details?.email}`)
-        
-        try {
-          // Update order status to PAID
-          const updatedOrder = await prisma.order.update({
-            where: { stripeSessionId: session.id },
-            data: { 
-              status: 'PAID',
-              paymentStatus: 'PAID'
-            },
-            include: {
-              user: true,
-              items: {
-                include: {
-                  product: true
-                }
-              }
-            }
-          })
-          
-          console.log(`✅ Order ${updatedOrder.orderNumber} updated to PAID status`)
-          
-          // Send confirmation email
-          const emailHtml = generateOrderConfirmationEmail({
-            orderNumber: updatedOrder.orderNumber,
-            customerName: updatedOrder.user.name || 'Cliente',
-            items: updatedOrder.items,
-            total: updatedOrder.total
-          })
-          
-          await sendEmail({
-            to: updatedOrder.user.email,
-            subject: `Confirmación de pedido ${updatedOrder.orderNumber}`,
-            html: emailHtml
-          })
-          
-          console.log(`📧 Confirmation email sent to ${updatedOrder.user.email}`)
-          
-        } catch (error) {
-          console.error(`❌ Error updating order for session ${session.id}:`, error)
-        }
-        
+
+        // Here you would typically:
+        // 1. Update your database with the order
+        // 2. Send confirmation emails
+        // 3. Update inventory
+        console.log(`Payment successful for session: ${session.id}`)
+        console.log(`Customer email: ${session.customer_details?.email}`)
+
+        // Example: Update order status in your database
+        // await db.order.update({
+        //   where: { stripeSessionId: session.id },
+        //   data: { status: 'paid' }
+        // })
+
         break
 
       case "payment_intent.succeeded":

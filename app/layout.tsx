@@ -8,6 +8,7 @@ import { CustomCursor } from "@/components/custom-cursor"
 import { CartProvider } from "@/context/cart-context"
 import { CartIcon } from "@/components/cart-icon"
 import { CartDrawer } from "@/components/cart-drawer"
+import { Providers } from "@/components/providers/session-provider"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -25,23 +26,25 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
       <body className={`${inter.className} bg-dark-900 text-gray-100`}>
-        <CartProvider>
-          <SplashScreen />
-          <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 pointer-events-none">
-            <Logo />
-          </div>
-          <div className="fixed top-4 right-4 z-50">
-            <CartIcon />
-          </div>
-          <CartDrawer />
-          {children}
-          <footer className="w-full py-6 px-4 bg-dark-600 text-gray-400">
-            <div className="container mx-auto text-center">
-              <p>&copy; 2023 SDFM 2520. All rights reserved.</p>
+        <Providers>
+          <CartProvider>
+            <SplashScreen />
+            <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 pointer-events-none">
+              <Logo />
             </div>
-          </footer>
-          <CustomCursor />
-        </CartProvider>
+            <div className="fixed top-4 right-4 z-50">
+              <CartIcon />
+            </div>
+            <CartDrawer />
+            {children}
+            <footer className="w-full py-6 px-4 bg-dark-600 text-gray-400">
+              <div className="container mx-auto text-center">
+                <p>&copy; 2023 SDFM 2520. All rights reserved.</p>
+              </div>
+            </footer>
+            <CustomCursor />
+          </CartProvider>
+        </Providers>
       </body>
     </html>
   )
