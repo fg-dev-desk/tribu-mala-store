@@ -103,14 +103,54 @@ pnpm run lint
 ## 💬 **CONTEXTO DE CONVERSACIONES**
 
 ### **Última sesión trabajamos en:**
-- ✅ Setup completo de Neon PostgreSQL + Prisma
-- ✅ Implementación de NextAuth.js con credenciales
-- ✅ Páginas de registro y login funcionales
-- ✅ Webhook handler robusto con persistencia en DB
-- ✅ Sistema de emails preparado para confirmaciones
+- ✅ Navegación minimalista con avatar flotante
+- ✅ Páginas completas de perfil de usuario
+- ✅ Sistema de gestión de órdenes (lista + detalles)
+- ✅ Integración total de autenticación en UI
+- ✅ Componentes modulares y reutilizables
 
 ### **Próximo paso acordado:**
-**Implementar navegación con login/logout y dashboard de usuario**
+**Integrar checkout con usuarios autenticados y continuar con catálogo dinámico**
+
+### **🚀 PRÓXIMOS PASOS PARA MAÑANA (ORDEN DE PRIORIDAD):**
+
+#### **1. 🔗 CHECKOUT COMPLETO CON CONTROL TOTAL** ⭐⭐⭐⭐⭐
+**Estado: 100% completado ✅**
+- [x] ✅ **Sistema de emails Resend** - Configurado y funcionando
+- [x] ✅ **FASE 1: Página checkout completa** - Formulario con todos los datos funcionando
+- [x] ✅ **FASE 2: Integración usuario autenticado** - Pre-llenar desde perfil
+- [x] ✅ **FASE 3: Payment Intent Stripe** - Solo pasarela de pagos funcionando
+- [x] ✅ **FASE 4: Página de pago** - Stripe Elements implementado
+- [x] ✅ **FASE 5: Página de éxito** - Confirmación y detalles de orden
+- [x] ✅ **FASE 6: Reset carrito** - Solo cuando pago es exitoso
+
+#### **ISSUES CORREGIDOS:**
+- [x] ✅ **Imágenes de productos** - Se muestran correctamente en checkout
+- [x] ✅ **Total NaN** - Error corregido en cálculo de totales  
+- [x] ✅ **Contraste de texto** - Mejorada legibilidad en formularios
+
+#### **FLUJO IMPLEMENTADO:**
+1. **Carrito** → Página checkout completa ✅ 
+2. **Recopilar datos** → Crear orden PENDING en DB ✅  
+3. **Payment Intent** → Página de pago con Stripe Elements ✅
+4. **Webhook confirma** → Cambiar PENDING a PAID + email ✅
+5. **Página éxito** → Mostrar detalles y reset carrito ✅
+
+#### **2. 📦 CATÁLOGO DINÁMICO** ⭐⭐⭐⭐⭐
+**Estado: CRÍTICO PARA MVP - EN DESARROLLO**
+- [ ] 🚀 **PRIORIDAD MÁXIMA: Productos desde base de datos** - Reemplazar TODO hardcoded
+- [ ] 🚀 **API /api/products** - Endpoint para obtener productos
+- [ ] 🚀 **Página principal dinámica** - Cargar productos desde DB
+- [ ] **Páginas individuales de producto** - /products/[id]
+- [ ] **Gestión de stock** - Control de inventario
+- [ ] **Imágenes optimizadas** - Next.js Image
+
+#### **3. 🔍 BÚSQUEDA & FILTROS** ⭐⭐⭐
+**Estado: 0% completado**
+- [ ] **Barra de búsqueda básica** - En header
+- [ ] **Filtros por precio** - Slider de rango
+- [ ] **Filtros por categoría** - Dropdown/tags
+- [ ] **Paginación** - Para lista de productos
 
 ---
 

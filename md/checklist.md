@@ -120,20 +120,26 @@
 - [x] ✅ **Login/Register flows** - Páginas funcionales con validación
 - [x] ✅ **Sistema de contraseñas** - Hash bcrypt implementado
 - [x] ✅ **Manejo de sesiones** - JWT y callbacks configurados
-- [ ] 🎯 **FASE 1: Componentes base auth** - AuthStatus, LoginButton, LogoutButton, UserAvatar
-- [ ] 🎯 **FASE 2: Sistema de navegación** - AuthNav, NavMenu, MobileNav
-- [ ] 🎯 **FASE 3: Integración layout** - Header responsivo con auth
-- [ ] 🎯 **FASE 4: Estados y UX** - Loading, notificaciones, redirecciones
-- [ ] 🎯 **Perfiles de usuario editables** - Dashboard personal
-- [ ] 🎯 **Integración checkout con usuarios** - Órdenes ligadas a accounts
+- [x] ✅ **FASE 1: Componentes base auth** - AuthStatus, LoginButton, LogoutButton, UserAvatar
+- [x] ✅ **FASE 2: Sistema de navegación** - AuthNav, NavMenu, MobileNav  
+- [x] ✅ **FASE 3: Integración layout** - Avatar flotante minimalista
+- [x] ✅ **FASE 4: Estados y UX** - Loading, dropdown, redirecciones
+- [x] ✅ **Páginas de perfil y órdenes** - Dashboard completo con detalles
+- [x] ✅ **Navegación de usuario** - Dropdown con Mi Perfil y Mis Pedidos
+- [x] ✅ **Integración checkout con usuarios** - Órdenes ligadas a accounts
+- [x] ✅ **Sistema completo de checkout** - Payment Intent implementado
+- [x] ✅ **Páginas de pago y éxito** - Stripe Elements y confirmación
+- [x] ✅ **API de órdenes** - Endpoint para obtener detalles
 
-### **🔥 SEMANA 3: CATÁLOGO & UX**
-**Prioridad: ALTA**
-- [ ] Productos desde base de datos
-- [ ] Páginas individuales de producto
-- [ ] Búsqueda básica
-- [ ] Gestión de stock
-- [ ] UI improvements (loading, errors, notifications)
+### **🔥 SEMANA 3: CATÁLOGO DINÁMICO & FINALIZACION MVP**
+**Prioridad: CRÍTICA PARA MVP**
+- [ ] 🚀 **PRIORIDAD 1: Productos desde base de datos** - Reemplazar hardcoded COMPLETAMENTE
+- [ ] 🚀 **PRIORIDAD 2: Pre-llenar datos de envío** - Desde perfil en checkout
+- [ ] 🚀 **PRIORIDAD 3: Órdenes reales en "Mis Pedidos"** - Conectar con DB real
+- [ ] 🎯 **Páginas individuales de producto** - /products/[id] dinámicas
+- [ ] 🎯 **Búsqueda y filtros básicos** - Barra de búsqueda + filtros
+- [ ] 🎯 **Gestión de stock** - Control de inventario
+- [x] ✅ **Sistema de emails Resend** - Configurado y funcionando
 
 ### **🔥 SEMANA 4: ADMIN & POLISH**
 **Prioridad: MEDIA**
@@ -175,14 +181,26 @@
 
 ---
 
-## 📊 **ESTADO ACTUAL**
+## 📊 **ESTADO ACTUAL MVP**
 
-**Completado:** ~50%
-**En desarrollo:** Database Integration & Order Management
-**Siguiente:** Email System & Authentication
+**Completado:** ~85%
+**En desarrollo:** Catálogo dinámico (productos desde DB)
+**Siguiente:** Pre-llenar checkout y conectar pedidos reales
 
-**Tiempo estimado para MVP:** 2-3 semanas restantes
-**Tiempo estimado para versión completa:** 6-8 semanas
+**LISTO PARA MVP:**
+- ✅ Base de datos PostgreSQL + Prisma
+- ✅ Autenticación NextAuth.js completa  
+- ✅ Sistema de checkout Payment Intent
+- ✅ Webhook handler + emails Resend
+- ✅ Páginas de perfil y órdenes
+
+**FALTA PARA MVP:**
+- 🚀 Productos dinámicos desde DB (CRÍTICO)
+- 🚀 Pre-llenar datos de checkout (CRÍTICO) 
+- 🚀 Conectar "Mis Pedidos" con órdenes reales (CRÍTICO)
+
+**Tiempo estimado para MVP:** 3-5 días restantes
+**Tiempo estimado para versión completa:** 2-3 semanas
 
 ## 🎉 **HITOS RECIENTES COMPLETADOS**
 

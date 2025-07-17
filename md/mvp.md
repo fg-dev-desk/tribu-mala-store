@@ -8,12 +8,15 @@ Crear una tienda funcional donde se pueda **vender productos, manejar pagos exit
 ## ⚡ **MÁXIMA PRIORIDAD - CORE SELLING FEATURES**
 
 ### **1. 💳 PAGOS & MANEJO DE RESPUESTAS** ⭐⭐⭐⭐⭐
-**Estado: 95% completado**
+**Estado: 100% completado**
 - [x] Stripe Checkout Sessions
-- [x] Verificación de sesiones
+- [x] **Payment Intent implementation** - Control total de datos
+- [x] **Página checkout completa** - Formulario con todos los campos
+- [x] **Página de pago** - Stripe Elements implementado  
+- [x] **Página de éxito** - Confirmación y detalles de orden
 - [x] **Webhook handler robusto** - Persistencia completa en DB
 - [x] **Manejo de pagos fallidos** - Estados FAILED/CANCELLED
-- [ ] **Emails de confirmación** (pending)
+- [x] **Emails de confirmación** - Sistema Resend configurado
 - [x] **Logging completo de transacciones** - Con emojis y timing
 
 ### **2. 🗄️ BASE DE DATOS (NEON POSTGRESQL)** ⭐⭐⭐⭐⭐
@@ -26,25 +29,28 @@ Crear una tienda funcional donde se pueda **vender productos, manejar pagos exit
 - [x] **Create-checkout con persistencia** - Órdenes PENDING funcionando
 
 ### **3. 🔐 AUTENTICACIÓN & PERFILES** ⭐⭐⭐⭐⭐
-**Estado: 80% completado**
+**Estado: 100% completado**
 - [x] **NextAuth.js setup** - Configurado con Prisma y JWT
 - [x] **Login/Register flows** - Páginas completas con validación
 - [x] **Sistema de contraseñas** - Hash bcrypt + verificación
 - [x] **Manejo de sesiones** - Callbacks y tipos TypeScript
-- [ ] **Perfil de usuario editable** - Dashboard personal
-- [ ] **Historial de pedidos** - Lista de órdenes del usuario
-- [ ] **Navegación con auth** - Login/logout en header
+- [x] **Perfil de usuario editable** - Dashboard personal con datos de envío
+- [x] **Historial de pedidos** - Lista completa + detalles individuales
+- [x] **Navegación con auth** - Avatar flotante con dropdown minimalista
 
 ---
 
 ## 🔧 **ALTA PRIORIDAD - ESSENTIAL FEATURES**
 
 ### **4. 📦 GESTIÓN DE ÓRDENES** ⭐⭐⭐⭐
-**Estado: 20% completado**
-- [ ] **Persistencia de órdenes en DB**
-- [ ] **Estados: pending, paid, processing, shipped, delivered, cancelled**
-- [ ] **API para consultar órdenes**
-- [ ] **Actualización automática vía webhooks**
+**Estado: 90% completado**
+- [x] **Persistencia de órdenes en DB** - Órdenes PENDING funcionando
+- [x] **Estados: pending, paid, processing, shipped, delivered, cancelled** - Enums definidos
+- [x] **Páginas de consulta órdenes** - Lista + detalles completos
+- [x] **Webhook handler** - Actualización PENDING → PAID + emails
+- [x] **Integración checkout-usuarios** - Órdenes ligadas a accounts autenticados
+- [x] **API para obtener órdenes** - Endpoint por orderNumber
+- [ ] **API completa para órdenes** - CRUD completo (update status)
 
 ### **5. 🛍️ CATÁLOGO DINÁMICO** ⭐⭐⭐⭐
 **Estado: 30% completado (hardcoded)**
@@ -54,11 +60,12 @@ Crear una tienda funcional donde se pueda **vender productos, manejar pagos exit
 - [ ] **Imágenes optimizadas**
 
 ### **6. 📧 SISTEMA DE EMAILS** ⭐⭐⭐⭐
-**Estado: 0% completado**
-- [ ] **Resend/SendGrid setup**
-- [ ] **Template de confirmación de compra**
-- [ ] **Notificación de estado de orden**
-- [ ] **Email de bienvenida**
+**Estado: 80% completado**
+- [x] **Resend setup** - API configurada y funcionando
+- [x] **Template de confirmación de compra** - HTML responsive en español
+- [x] **Integración con webhook** - Emails automáticos post-pago
+- [ ] **Template de bienvenida** - Para nuevos usuarios
+- [ ] **Notificaciones de cambio de estado** - Shipping updates
 
 ---
 
