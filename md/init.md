@@ -110,40 +110,43 @@ pnpm run lint
 - ✅ Componentes modulares y reutilizables
 
 ### **Próximo paso acordado:**
-**Integrar checkout con usuarios autenticados y continuar con catálogo dinámico**
+**ELIMINAR TODO HARDCODE: Implementar productos dinámicos desde base de datos**
 
-### **🚀 PRÓXIMOS PASOS PARA MAÑANA (ORDEN DE PRIORIDAD):**
+### **🚀 ESTADO ACTUAL - JULIO 2025:**
 
-#### **1. 🔗 CHECKOUT COMPLETO CON CONTROL TOTAL** ⭐⭐⭐⭐⭐
-**Estado: 100% completado ✅**
-- [x] ✅ **Sistema de emails Resend** - Configurado y funcionando
-- [x] ✅ **FASE 1: Página checkout completa** - Formulario con todos los datos funcionando
-- [x] ✅ **FASE 2: Integración usuario autenticado** - Pre-llenar desde perfil
-- [x] ✅ **FASE 3: Payment Intent Stripe** - Solo pasarela de pagos funcionando
-- [x] ✅ **FASE 4: Página de pago** - Stripe Elements implementado
-- [x] ✅ **FASE 5: Página de éxito** - Confirmación y detalles de orden
-- [x] ✅ **FASE 6: Reset carrito** - Solo cuando pago es exitoso
+#### **✅ COMPLETADO (85% MVP):**
+- [x] ✅ **Base de datos PostgreSQL + Prisma** - Funcionando 100%
+- [x] ✅ **Autenticación NextAuth.js** - Sistema completo con perfiles  
+- [x] ✅ **Sistema checkout Payment Intent** - Control total implementado
+- [x] ✅ **Páginas: checkout → payment → success** - Flujo completo
+- [x] ✅ **Webhook handler + emails Resend** - Automático post-pago
+- [x] ✅ **Páginas perfil y órdenes** - Dashboard funcional
+- [x] ✅ **Seed data** - 4 productos SDFM en base de datos
 
-#### **ISSUES CORREGIDOS:**
-- [x] ✅ **Imágenes de productos** - Se muestran correctamente en checkout
-- [x] ✅ **Total NaN** - Error corregido en cálculo de totales  
-- [x] ✅ **Contraste de texto** - Mejorada legibilidad en formularios
+#### **🚀 CRÍTICO PARA MVP (15% restante):**
 
-#### **FLUJO IMPLEMENTADO:**
-1. **Carrito** → Página checkout completa ✅ 
-2. **Recopilar datos** → Crear orden PENDING en DB ✅  
-3. **Payment Intent** → Página de pago con Stripe Elements ✅
-4. **Webhook confirma** → Cambiar PENDING a PAID + email ✅
-5. **Página éxito** → Mostrar detalles y reset carrito ✅
+##### **1. PRODUCTOS DINÁMICOS** ⭐⭐⭐⭐⭐
+**ELIMINAR TODO HARDCODE - MÁXIMA PRIORIDAD**
+- [ ] 🔥 **API /api/products** - Endpoint para listar productos
+- [ ] 🔥 **Página principal dinámica** - Cargar desde DB real  
+- [ ] 🔥 **Carrito dinámico** - Usar IDs reales en lugar de objetos
+- [ ] 🔥 **Validación de productos** - En checkout contra DB
 
-#### **2. 📦 CATÁLOGO DINÁMICO** ⭐⭐⭐⭐⭐
-**Estado: CRÍTICO PARA MVP - EN DESARROLLO**
-- [ ] 🚀 **PRIORIDAD MÁXIMA: Productos desde base de datos** - Reemplazar TODO hardcoded
-- [ ] 🚀 **API /api/products** - Endpoint para obtener productos
-- [ ] 🚀 **Página principal dinámica** - Cargar productos desde DB
-- [ ] **Páginas individuales de producto** - /products/[id]
-- [ ] **Gestión de stock** - Control de inventario
-- [ ] **Imágenes optimizadas** - Next.js Image
+##### **2. CHECKOUT PRE-LLENADO** ⭐⭐⭐⭐⭐  
+**INTEGRACIÓN COMPLETA CON USUARIOS**
+- [ ] 🔥 **Pre-llenar datos** - Desde perfil usuario autenticado
+- [ ] 🔥 **Validar stock** - Antes de crear Payment Intent
+
+##### **3. ÓRDENES REALES** ⭐⭐⭐⭐⭐
+**CONECTAR "MIS PEDIDOS" CON DB REAL**
+- [ ] 🔥 **Lista órdenes reales** - Del usuario autenticado
+- [ ] 🔥 **Detalles completos** - Con productos reales comprados
+
+#### **⏰ ESTIMACIÓN MVP FINAL:**
+**Tiempo restante: 8-12 horas (1-2 días)**
+
+#### **🎯 PRÓXIMO PASO INMEDIATO:**
+**Crear API /api/products y convertir página principal a dinámica**
 
 #### **3. 🔍 BÚSQUEDA & FILTROS** ⭐⭐⭐
 **Estado: 0% completado**
