@@ -143,8 +143,12 @@
 
 ### **🔥 SEMANA 4: ADMIN & POLISH**
 **Prioridad: MEDIA**
-- [ ] Panel admin básico
-- [ ] Gestión de órdenes
+- [x] ✅ **Panel admin completo** - Dashboard con métricas implementado
+- [x] ✅ **Sistema de roles** - CUSTOMER, ADMIN, SUPER_ADMIN funcionando
+- [x] ✅ **Gestión de órdenes admin** - CRUD completo con estados
+- [x] ✅ **Gestión de productos admin** - Interface completa
+- [x] ✅ **Gestión de usuarios admin** - Lista y estadísticas
+- [x] ✅ **APIs admin protegidas** - Middleware y autenticación por roles
 - [ ] Testing manual completo
 - [ ] Bug fixes
 - [ ] Performance optimization
@@ -183,9 +187,9 @@
 
 ## 📊 **ESTADO ACTUAL MVP**
 
-**Completado:** ~85%
+**Completado:** ~95%
 **En desarrollo:** Catálogo dinámico (productos desde DB)
-**Siguiente:** Pre-llenar checkout y conectar pedidos reales
+**Siguiente:** Eliminar hardcode de productos - ÚLTIMA FASE MVP
 
 **LISTO PARA MVP:**
 - ✅ Base de datos PostgreSQL + Prisma
@@ -193,13 +197,16 @@
 - ✅ Sistema de checkout Payment Intent
 - ✅ Webhook handler + emails Resend
 - ✅ Páginas de perfil y órdenes
+- ✅ **Dashboard admin completo con sistema de roles**
+- ✅ **APIs admin protegidas y funcionales**
+- ✅ **Gestión completa de órdenes, productos y usuarios**
 
-**FALTA PARA MVP:**
-- 🚀 Productos dinámicos desde DB (CRÍTICO)
-- 🚀 Pre-llenar datos de checkout (CRÍTICO) 
-- 🚀 Conectar "Mis Pedidos" con órdenes reales (CRÍTICO)
+**FALTA PARA MVP FINAL:**
+- 🚀 Productos dinámicos desde DB (CRÍTICO) - Eliminar hardcode
+- 🚀 Pre-llenar datos de checkout (MEDIO) 
+- 🚀 Conectar "Mis Pedidos" con órdenes reales (MEDIO)
 
-**Tiempo estimado para MVP:** 3-5 días restantes
+**Tiempo estimado para MVP:** 1-2 días restantes
 **Tiempo estimado para versión completa:** 2-3 semanas
 
 ## 🎉 **HITOS RECIENTES COMPLETADOS**

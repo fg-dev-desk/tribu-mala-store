@@ -7,15 +7,18 @@
 
 ## ⚡ **ESTADO ACTUAL - JULIO 2025**
 
-### **✅ COMPLETADO (85%)**
+### **✅ COMPLETADO (95%)**
 - ✅ **Base de datos PostgreSQL + Prisma** - Funcionando 100%
 - ✅ **Autenticación NextAuth.js** - Sistema completo con perfiles
 - ✅ **Sistema de checkout Payment Intent** - Control total de datos
 - ✅ **Webhook handler + emails Resend** - Automático post-pago
 - ✅ **Páginas de perfil y órdenes** - Dashboard funcional
 - ✅ **Seed data** - 4 productos SDFM en base de datos
+- ✅ **Dashboard admin completo** - Con sistema de roles
+- ✅ **APIs admin protegidas** - Gestión órdenes, productos, usuarios
+- ✅ **Middleware de autenticación** - Protección rutas admin
 
-### **🚀 CRÍTICO PARA MVP (15% RESTANTE)**
+### **🚀 CRÍTICO PARA MVP (5% RESTANTE)**
 
 #### **1. PRODUCTOS DINÁMICOS** ⭐⭐⭐⭐⭐
 **ELIMINAR TODO HARDCODE**
@@ -98,16 +101,19 @@
 
 ## ⏰ **ESTIMACIÓN DE TIEMPO**
 
-**Total restante: 8-12 horas de desarrollo**
+**Total restante: 4-6 horas de desarrollo**
 
-### **Hoy (4-6 horas):**
+### **Hoy (4-6 horas - MVP FINAL):**
 - [ ] API de productos + página principal dinámica
 - [ ] Carrito dinámico
-
-### **Mañana (4-6 horas):**
 - [ ] Checkout pre-llenado
 - [ ] Mis Pedidos real
-- [ ] Testing completo del flujo
+
+### **Completado ya:**
+- ✅ Dashboard admin completo
+- ✅ Sistema de roles funcionando
+- ✅ Todas las APIs admin
+- ✅ Gestión completa órdenes/productos/usuarios
 
 ---
 

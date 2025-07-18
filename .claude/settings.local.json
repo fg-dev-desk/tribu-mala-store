@@ -22,7 +22,13 @@
       "Bash(git push:*)",
       "Bash(npx shadcn@latest add:*)",
       "Bash(find:*)",
-      "Bash(pnpm install:*)"
+      "Bash(pnpm install:*)",
+      "Bash(DATABASE_URL=\"postgresql://neondb_owner:npg_cXmGb72OJaWt@ep-long-dust-aessi7e0-pooler.c-2.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require\" npx prisma db push)",
+      "Bash(DATABASE_URL=\"postgresql://neondb_owner:npg_cXmGb72OJaWt@ep-long-dust-aessi7e0-pooler.c-2.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require\" npx ts-node prisma/seed-admin.ts)",
+      "Bash(DATABASE_URL=\"postgresql://neondb_owner:npg_cXmGb72OJaWt@ep-long-dust-aessi7e0-pooler.c-2.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require\" node prisma/seed-admin.ts)",
+      "Bash(DATABASE_URL=\"postgresql://neondb_owner:npg_cXmGb72OJaWt@ep-long-dust-aessi7e0-pooler.c-2.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require\" npx prisma studio)",
+      "Bash(npx shadcn add:*)",
+      "Bash(mv:*)"
     ],
     "deny": []
   }

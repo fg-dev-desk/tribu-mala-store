@@ -10,6 +10,7 @@ import { CartIcon } from "@/components/cart-icon"
 import { CartDrawer } from "@/components/cart-drawer"
 import { Providers } from "@/components/providers/session-provider"
 import { AuthNav } from "@/components/navigation/auth-nav"
+import { ThemeProvider } from "@/components/theme-provider"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -25,10 +26,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="dark scroll-smooth">
-      <body className={`${inter.className} bg-dark-900 text-gray-100`}>
-        <Providers>
-          <CartProvider>
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <body className={`${inter.className}`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Providers>
+            <CartProvider>
             <SplashScreen />
             
             {/* Logo flotante centrado */}
@@ -58,8 +65,9 @@ export default function RootLayout({
               </div>
             </footer>
             <CustomCursor />
-          </CartProvider>
-        </Providers>
+            </CartProvider>
+          </Providers>
+        </ThemeProvider>
       </body>
     </html>
   )

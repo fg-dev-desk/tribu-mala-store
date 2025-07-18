@@ -114,7 +114,7 @@ pnpm run lint
 
 ### **🚀 ESTADO ACTUAL - JULIO 2025:**
 
-#### **✅ COMPLETADO (85% MVP):**
+#### **✅ COMPLETADO (95% MVP):**
 - [x] ✅ **Base de datos PostgreSQL + Prisma** - Funcionando 100%
 - [x] ✅ **Autenticación NextAuth.js** - Sistema completo con perfiles  
 - [x] ✅ **Sistema checkout Payment Intent** - Control total implementado
@@ -122,8 +122,11 @@ pnpm run lint
 - [x] ✅ **Webhook handler + emails Resend** - Automático post-pago
 - [x] ✅ **Páginas perfil y órdenes** - Dashboard funcional
 - [x] ✅ **Seed data** - 4 productos SDFM en base de datos
+- [x] ✅ **Dashboard admin completo** - Con sistema de roles y gestión total
+- [x] ✅ **APIs admin protegidas** - /api/admin/* con middleware
+- [x] ✅ **Gestión órdenes, productos, usuarios** - CRUD completo desde admin
 
-#### **🚀 CRÍTICO PARA MVP (15% restante):**
+#### **🚀 CRÍTICO PARA MVP (5% restante):**
 
 ##### **1. PRODUCTOS DINÁMICOS** ⭐⭐⭐⭐⭐
 **ELIMINAR TODO HARDCODE - MÁXIMA PRIORIDAD**
@@ -143,7 +146,7 @@ pnpm run lint
 - [ ] 🔥 **Detalles completos** - Con productos reales comprados
 
 #### **⏰ ESTIMACIÓN MVP FINAL:**
-**Tiempo restante: 8-12 horas (1-2 días)**
+**Tiempo restante: 4-6 horas (1 día)**
 
 #### **🎯 PRÓXIMO PASO INMEDIATO:**
 **Crear API /api/products y convertir página principal a dinámica**
